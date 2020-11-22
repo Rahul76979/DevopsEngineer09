@@ -43,6 +43,8 @@ public class UserCTL {
 	@GetMapping("/delete/{id}")
 	public Map<String, Object> delete(@PathVariable int id){
 		
+	   // comment added
+		//coment sadasd
 		Map<String, Object> res = new HashMap<>();
 		service.delete(id);
 		
