@@ -2,14 +2,19 @@ package com.devops.DTO;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "User_Table")
 public class UserDTO {
 	
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
     
     @Column(name = "FirstName")
