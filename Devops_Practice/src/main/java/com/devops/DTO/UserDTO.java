@@ -1,5 +1,10 @@
 package com.devops.DTO;
 
-public class UserDTO {
+import javax.persistence.Id;
 
+public class UserDTO {
+	
+    @Id
+	private int id;
+	
 }
