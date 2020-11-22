@@ -19,7 +19,7 @@ import com.devops.Service.UserService;
 @RequestMapping("/api/user")
 public class UserCTL {
 	
-	Map<String, Object> res = new HashMap<>();
+	
 	
 	@Autowired
 	UserService service;
@@ -32,6 +32,7 @@ public class UserCTL {
 	@PostMapping("/save")
 	public Map<String, Object> add(@RequestBody UserDTO userDto){
 		   
+		Map<String, Object> res = new HashMap<>();
 		UserDTO dto = service.save(userDto);
 	     
 		res.put("message", "Data Saved Successfully");
@@ -42,6 +43,9 @@ public class UserCTL {
 	@GetMapping("/delete/{id}")
 	public Map<String, Object> delete(@PathVariable int id){
 		
+	   // comment added
+		//coment sadasd
+		Map<String, Object> res = new HashMap<>();
 		service.delete(id);
 		
 		res.put("message", "Data Deleted Successfully");
@@ -51,6 +55,8 @@ public class UserCTL {
 	
 	@GetMapping("/getAll")
 	public Map<String, Object> getAll(){
+		
+		Map<String, Object> res = new HashMap<>();
 		List<UserDTO> findAll = service.findAll();
 		res.put("list", findAll);
 		
@@ -61,6 +67,7 @@ public class UserCTL {
 	@GetMapping("/getByID")
 	public Map<String, Object> findById(int id){
 		 
+		Map<String, Object> res = new HashMap<>();
 		UserDTO dto;
 		try {
 			dto = service.findById(id);
