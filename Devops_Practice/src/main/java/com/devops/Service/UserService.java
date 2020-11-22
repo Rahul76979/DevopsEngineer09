@@ -11,7 +11,7 @@ import com.devops.DTO.UserDTO;
 import com.devops.dao.UserDAO;
 
 @Service
-public class UserService 
+public class UserService  implements UserserviceInt
 {
 	@Autowired
 	private UserDAO dao;
