@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.devops.DTO.UserDTO;
 import com.devops.dao.UserDAO;
+import com.devops.exception.ApplicationException;
 
 @Service
 public class UserService  implements UserserviceInt
@@ -33,11 +34,10 @@ public class UserService  implements UserserviceInt
 		return all;
 	}
 	
-	public UserDTO findById(int id) throws Exception
+	public Optional<UserDTO> findById(int id)
 	{
-		Optional<UserDTO> save = dao.findById(id);
-		UserDTO orElseThrow = save.orElseThrow(()->new Exception("This is Custom Exception"));
+		Optional<UserDTO> get = dao.findById(id);
 		
-		return orElseThrow;
+		return get;
 	}
 }
